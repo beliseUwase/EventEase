@@ -1,0 +1,470 @@
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #243047;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #5145cd;
+    text-decoration: none;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #243047;
+}
+
+.navbar nav .nav-button {
+    background-color: #5145cd;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+/* Hero section */
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background-color: #f2f1ff;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: #5145cd;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #5145cd;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #596579;
+    margin-bottom: 30px;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 13px 24px;
+    background-color: #5145cd;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* About and features */
+.about,
+.features {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.about p {
+    max-width: 650px;
+    margin: 15px auto 0;
+    color: #596579;
+}
+
+.features {
+    background-color: #f8f9fc;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card p {
+    color: #596579;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #243047;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Authentication pages */
+
+.auth-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f8f9fc;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.auth-card h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    color: #596579;
+    margin-bottom: 25px;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-card label {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.auth-card input {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d5d9e2;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.auth-card input:focus {
+    outline: 2px solid #5145cd;
+    border-color: #5145cd;
+}
+
+.auth-button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.auth-footer a {
+    color: #5145cd;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Public Events Page */
+
+.events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 8%;
+}
+
+.events-container h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Search and filter section */
+
+#eventFilters,
+#eventSorting {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#eventFilters input,
+#eventSorting select {
+    padding: 12px 15px;
+    border: 1px solid #d5d9e2;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: white;
+}
+
+#eventFilters input {
+    flex: 1;
+    min-width: 180px;
+}
+
+#eventFilters input:focus,
+#eventSorting select:focus {
+    outline: 2px solid #5145cd;
+    border-color: #5145cd;
+}
+
+#eventFilters button,
+#publicEventList button,
+#rsvpForm button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    background-color: #5145cd;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#eventFilters button:hover,
+#publicEventList button:hover,
+#rsvpForm button:hover {
+    background-color: #4035ad;
+}
+
+#publicEventList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+#publicEventList > div {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+#publicEventList h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+    color: #243047;
+}
+
+#publicEventList p {
+    margin-bottom: 9px;
+    color: #596579;
+}
+
+#publicEventList button {
+    margin-top: 12px;
+}
+
+#publicEventList button:disabled {
+    background-color: #a5a9b5;
+    cursor: not-allowed;
+}
+
+/* RSVP registration form */
+
+#rsvpSection {
+    max-width: 600px;
+    margin: 45px auto;
+    padding: 30px;
+    background-color: #f8f9fc;
+    border-radius: 12px;
+}
+
+#rsvpSection h2 {
+    margin-bottom: 20px;
+}
+
+#rsvpForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#rsvpForm label {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+#rsvpForm input {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d5d9e2;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+#rsvpMessage {
+    margin-top: 15px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 700px) {
+    .events-container {
+        padding: 35px 5%;
+    }
+
+    #eventFilters {
+        flex-direction: column;
+    }
+
+    #eventFilters input,
+    #eventFilters button {
+        width: 100%;
+    }
+
+    #publicEventList {
+        grid-template-columns: 1fr;
+    }
+
+    #rsvpSection {
+        margin: 30px 5%;
+        padding: 22px;
+    }
+}
+
+/* Public Events Page Header */
+
+.events-container + header {
+    background-color: #243047;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+body > header {
+    background-color: #243047;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+body > header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+body > header p {
+    font-size: 16px;
+    color: #e0e4ed;
+}
+
+/* Event Card Hover Effect */
+#publicEventList > div {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#publicEventList > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+/* RSVP Form Styling */
+
+#rsvpSection {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#rsvpForm input:focus {
+    outline: none;
+    border-color: #5145cd;
+    box-shadow: 0 0 0 3px rgba(81, 69, 205, 0.12);
+}
+
+#rsvpForm button {
+    padding: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.privacy-notice {
+    background-color: #f0f4f8;
+    border-left: 4px solid #2563eb;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+.privacy-notice h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1e3a8a;
+}
+
+.privacy-notice p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    color: #374151;
+    font-size: 14px;
+}

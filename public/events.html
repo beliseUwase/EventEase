@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Events - EventEase</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="logo">EventEase</a>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="#publicEventList">Available Events</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>EventEase</h1>
+        <p>Discover events and reserve your spot!</p>
+    </header>
+
+    <main class="events-container">
+        <section>
+            <h2>Available Events</h2>
+
+            <!-- Event search and filters -->
+            <div id="eventFilters">
+
+                <input
+                    type="text"
+                    id="eventSearch"
+                    placeholder="Search events by title..."
+                >
+
+                <input
+                    type="date"
+                    id="eventDateFilter"
+                >
+
+                <input
+                    type="text"
+                    id="eventLocationFilter"
+                    placeholder="Filter by location..."
+                >
+
+                <button type="button" id="clearFilters">
+                    Clear Filters
+                </button>
+
+            </div>
+
+            <!-- Event sorting -->
+            <div id="eventSorting">
+
+                <label for="eventSort">Sort events by date:</label>
+
+                <select id="eventSort">
+                    <option value="earliest">Earliest first</option>
+                    <option value="latest">Latest first</option>
+                </select>
+
+            </div>
+
+            <div id="publicEventList">
+                <p>Loading events...</p>
+            </div>
+
+            <section id="rsvpSection" style="display: none;">
+            <h2>Register for an Event</h2>
+
+            <div class="privacy-notice">
+                <h3>Privacy Notice</h3>
+                <p>
+                    The information you provide, including your name, email address,
+                    and number of guests, will be used to manage your event registration.
+                    Your registration details will only be accessible to the organizer
+                    of the event and will not be displayed publicly.
+                </p>
+            </div>
+
+            <form id="rsvpForm">
+                <input type="hidden" id="eventId" name="eventId">
+
+                <label for="visitorName">Full Name</label>
+                <input
+                    type="text"
+                    id="visitorName"
+                    name="name"
+                    required
+                >
+
+                <label for="visitorEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="visitorEmail"
+                    name="email"
+                    required
+                >
+
+                <label for="numberOfGuests">Number of Guests</label>
+                <input
+                    type="number"
+                    id="numberOfGuests"
+                    name="numberOfGuests"
+                    min="1"
+                    value="1"
+                    required
+                >
+
+                <button type="submit">Submit RSVP</button>
+            </form>
+
+            <p id="rsvpMessage"></p>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/events.js"></script>
+</body>
+</html>

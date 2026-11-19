@@ -1,0 +1,414 @@
+
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Navigation bar */
+header {
+    background-color: #253858;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #a9c5ff;
+}
+
+/* Main dashboard content */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+main h2 {
+    margin-bottom: 25px;
+    color: #253858;
+}
+
+/* Dashboard sections */
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h3 {
+    margin-bottom: 15px;
+    color: #253858;
+}
+
+section p {
+    line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
+
+/* Dashboard Layout Improvements */
+
+main {
+    max-width: 1200px;
+    margin: 45px auto;
+    padding: 20px 30px;
+}
+
+main h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+section {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+section h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+/* Event Creation Form */
+
+#eventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#eventForm label {
+    font-weight: bold;
+    color: #253858;
+    margin-top: 8px;
+}
+
+#eventForm input,
+#eventForm textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d5d9e2;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+#eventForm textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+#eventForm input:focus,
+#eventForm textarea:focus {
+    outline: none;
+    border-color: #5145cd;
+    box-shadow: 0 0 0 3px rgba(81, 69, 205, 0.12);
+}
+
+/* Dashboard Buttons */
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    background-color: #5145cd;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #4035ad;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #a5a9b5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#eventForm button {
+    margin-top: 15px;
+    padding: 14px;
+}
+
+/* Organizer Event Cards */
+
+#eventList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    margin-top: 20px;
+}
+
+#eventList > div {
+    padding: 22px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#eventList > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.09);
+}
+
+#eventList > div p {
+    margin-bottom: 10px;
+}
+
+/* Smaller, Better-Spaced Dashboard Buttons */
+#eventList button {
+    padding: 8px 13px;
+    font-size: 13px;
+    margin: 8px 8px 4px 0;
+    border-radius: 7px;
+    display: inline-block;
+    width: auto;
+    line-height: 1.4;
+}
+
+/* Muted Dashboard Button Colors */
+
+#eventList button {
+    background-color: #64748b;
+    color: white;
+}
+
+#eventList button:hover {
+    background-color: #475569;
+}
+
+#eventForm button {
+    background-color: #64748b;
+}
+
+#eventForm button:hover {
+    background-color: #475569;
+}
+
+/* RSVP Attendee List */
+
+.rsvp-list {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rsvp-attendee-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+}
+
+.rsvp-attendee-details {
+    margin: 0;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.rsvp-delete-button {
+    background-color: #94a3b8;
+    color: white;
+    font-size: 12px;
+    padding: 7px 11px;
+    flex-shrink: 0;
+}
+
+.rsvp-delete-button:hover {
+    background-color: #64748b;
+}
+
+/* Mobile RSVP Layout */
+
+@media (max-width: 600px) {
+    .rsvp-attendee-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Organizer Welcome Section */
+
+#welcomeSection {
+    background-color: #f8fafc;
+    border-left: 5px solid #64748b;
+}
+
+#welcomeSection h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+#welcomeSection p {
+    margin-bottom: 8px;
+    color: #596579;
+}
+
+#organizerName,
+#organizerEmail {
+    font-weight: bold;
+    color: #253858;
+}
+
+/* Dashboard Navigation Improvements */
+
+header {
+    background-color: #253858;
+    padding: 22px 40px;
+}
+
+nav a {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #3b4f70;
+    color: white;
+}
+
+nav a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+/* Event Statistics */
+
+#eventList > div p {
+    line-height: 1.7;
+}
+
+#eventList > div h4 {
+    font-size: 19px;
+    color: #253858;
+    margin-bottom: 14px;
+}
+
+/* Dashboard Feedback Messages */
+
+#eventMessage {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 7px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* RSVP attendee list message spacing */
+.rsvp-list {
+    line-height: 1.6;
+}
+
+
+/* Improved Dashboard Mobile Layout */
+
+@media (max-width: 700px) {
+    main {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    main h2 {
+        font-size: 25px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    #eventList {
+        grid-template-columns: 1fr;
+    }
+
+    #eventList > div {
+        padding: 18px;
+    }
+
+    header {
+        padding: 18px 20px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
+
+/* Updated Dashboard Button Colors */
+
+#eventList button {
+    background-color: #214c67;
+    color: white;
+}
+
+#eventList button:hover {
+    background-color: #215379;
+}
+
+#eventForm button {
+    background-color: #163f58;
+    color: white;
+}
+
+#eventForm button:hover {
+    background-color: #3F5668;
+}
