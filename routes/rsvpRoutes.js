@@ -45,8 +45,9 @@ router.post("/", async (req, res) => {
                 typeof name !== "string" || !name.trim() ||
                 typeof email !== "string" || !email.trim() ||
                 !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()) ||
-                !Number.isInteger(Number(numberOfGuests)) ||
-                Number(numberOfGuests) <= 0
+                typeof numberOfGuests !== "string" ||
+                !/^[1-9]\d*$/.test(numberOfGuests.trim()) ||
+                !Number.isSafeInteger(Number(numberOfGuests))
             ) {
                 return res.status(400).json({
                     message: "Please provide valid RSVP information."
