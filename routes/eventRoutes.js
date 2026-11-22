@@ -185,6 +185,24 @@ router.put("/:id", requireAuth, async (req, res) => {
             });
         }
 
+        // Read existing RSVP records
+        const rsvps = await readRSVPs();
+
+        // Calculate the number of guests already registered
+        const registeredGuests = rsvps
+            .filter(rsvp => rsvp.eventId === req.params.id)
+            .reduce(
+                (total, rsvp) => total + rsvp.numberOfGuests,
+                0
+            );
+
+        // Prevent reducing capacity below registered guests
+        if (Number(maxAttendees) < registeredGuests) {
+            return res.status(400).json({
+                message: `Maximum attendees cannot be lower than the ${registeredGuests} guests already registered.`
+            });
+        }
+
         // Update the event information
         events[eventIndex].title = title.trim();
         events[eventIndex].description = description.trim();
