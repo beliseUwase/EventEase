@@ -39,6 +39,7 @@ EventEase is an event RSVP management web application that allows organizers to 
 - Duplicate RSVP prevention.
 - Event capacity enforcement.
 - Session cookie security settings.
+- Prevent organizers from reducing event capacity below the number of guests already registered.
 
 ## Project Structure
 
@@ -66,7 +67,7 @@ EventEase/
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/beliseUwase/EventEase
 cd EventEase
 ```
 
@@ -83,7 +84,7 @@ Create a `.env` file in the project root using `.env.example` as a template.
 Set your own session secret:
 
 ```env
-SESSION_SECRET=kigaliconventioncenter2020!
+SESSION_SECRET=replace_with_a_long_random_secret
 ```
 
 ### 4. Initialize the data files
